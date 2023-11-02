@@ -10,13 +10,13 @@ const tableNameHeader = document.createElement(`th`);
 const tableOccupationHeader = document.createElement(`th`);
 const tablePriceHeader = document.createElement(`th`);
 
+// create array to hold freelancers information
+
 const freeLancers = [
     {name: `John Smith`, occupation: `Graphic Designer`, price: `$50`},
     {name: `Jane Doe`, occupation: `Advertiser`, price: `$40`},
     {name: `Mike Jordan`, occupation: `Architect`, price: `$60`}
-]
-
-// const tableHead = document.createTHead(`th`);
+];
 
 //insert values into elements
 
@@ -38,6 +38,32 @@ freeLancerTable.appendChild(tableHeaderRow);
 tableHeaderRow.appendChild(tableNameHeader);
 tableHeaderRow.appendChild(tableOccupationHeader);
 tableHeaderRow.appendChild(tablePriceHeader); 
+
+// create function to go through array and add each freelancer to the freelancer table
+
+freeLancers.forEach((freelancer) => {
+    //make freelancer table row for each freelancer
+    const freeLancerRow = document.createElement(`tr`);
+
+    //make the value places for each type of freelancer information
+    const nameValue = document.createElement(`td`);
+    const occupationValue = document.createElement(`td`);
+    const priceValue = document.createElement(`td`);
+
+    //insert content into the values using the freelancer array
+    nameValue.textContent = freelancer.name;
+    occupationValue.textContent = freelancer.occupation;
+    priceValue.textContent = freelancer.price;
+
+    //add the value places to the row
+    freeLancerRow.appendChild(nameValue);
+    freeLancerRow.appendChild(occupationValue);
+    freeLancerRow.appendChild(priceValue);
+
+    //add the row to the table
+    freeLancerTable.appendChild(freeLancerRow);
+
+ });
 
 
 
