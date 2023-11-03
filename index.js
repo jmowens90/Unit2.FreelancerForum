@@ -63,11 +63,7 @@ freeLancers.forEach((freelancer) => {
 
     //style the parts of the table
     freeLancerRow.setAttribute(`style`, `font-size: 1.5rem;`);
-    nameValue.setAttribute(`style`, `border-padding: 10px;`);
-    occupationValue.setAttribute(`style`, `border-padding: 10px;`);
-    priceValue.setAttribute(`style`, `border-padding: 10px;`);
-
-
+    
     //add the value places to the row
     freeLancerRow.appendChild(nameValue);
     freeLancerRow.appendChild(occupationValue);
