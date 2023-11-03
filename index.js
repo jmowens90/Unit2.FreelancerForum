@@ -81,6 +81,7 @@ freeLancerH1.setAttribute(`style`, `text-align: center; font-size: 3rem;`);
 freeLancerP.setAttribute(`style`, `text-align: center; font-size: 1.75rem;`);
 freeLancerH2.setAttribute(`style`, `text-align: center; font-size: 2rem;`);
 freeLancerTable.setAttribute(`style`, `margin: 0 auto;` )
+freeLancerTable.getElementsByTagName
 tableHeaderRow.setAttribute(`style`, `font-size: 1.5rem;`)
 
 
