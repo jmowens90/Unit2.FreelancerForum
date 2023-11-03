@@ -13,15 +13,21 @@ const tablePriceHeader = document.createElement(`th`);
 // create array to hold freelancers information
 
 const freeLancers = [
-    {name: `John Smith`, occupation: `Graphic Designer`, price: `$50`},
-    {name: `Jane Doe`, occupation: `Advertiser`, price: `$40`},
-    {name: `Mike Jordan`, occupation: `Architect`, price: `$60`}
+    {name: `John Smith`, occupation: `Graphic Designer`, price: 50},
+    {name: `Jane Doe`, occupation: `Advertiser`, price: 40},
+    {name: `Mike Jordan`, occupation: `Architect`, price: 60},
 ];
+
+const priceSum = freeLancers.reduce(function(total, freeLancers) {
+    return total + freeLancers.price;
+ }, 0);
+
+ const avgPrice = priceSum / freeLancers.length;
 
 //insert values into elements
 
 freeLancerH1.textContent = `Freelancer Forum`;
-freeLancerP.textContent = `The average starting price is $30.`;
+freeLancerP.textContent = `The average starting price is $${avgPrice}.`;
 freeLancerH2.textContent = `Available Freelancers`;
 tableNameHeader.textContent = `Name`;
 tableOccupationHeader.textContent = `Occupation`;
@@ -53,7 +59,14 @@ freeLancers.forEach((freelancer) => {
     //insert content into the values using the freelancer array
     nameValue.textContent = freelancer.name;
     occupationValue.textContent = freelancer.occupation;
-    priceValue.textContent = freelancer.price;
+    priceValue.textContent = `$` + freelancer.price;
+
+    //style the parts of the table
+    freeLancerRow.setAttribute(`style`, `font-size: 1.5rem;`);
+    nameValue.setAttribute(`style`, `border-padding: 10px;`);
+    occupationValue.setAttribute(`style`, `border-padding: 10px;`);
+    priceValue.setAttribute(`style`, `border-padding: 10px;`);
+
 
     //add the value places to the row
     freeLancerRow.appendChild(nameValue);
@@ -65,13 +78,13 @@ freeLancers.forEach((freelancer) => {
 
  });
 
-
-
 //style the elements
 
 body.setAttribute(`style`, `border: 2px solid black; width: 40%; min-width: 450px; margin: 0 auto;`);
 freeLancerH1.setAttribute(`style`, `text-align: center; font-size: 3rem;`);
 freeLancerP.setAttribute(`style`, `text-align: center; font-size: 1.75rem;`);
 freeLancerH2.setAttribute(`style`, `text-align: center; font-size: 2rem;`);
+freeLancerTable.setAttribute(`style`, `margin: 0 auto;` )
+tableHeaderRow.setAttribute(`style`, `font-size: 1.5rem;`)
 
-//make table have 3 headers ex: Name, Occupation, Starting Price
+
